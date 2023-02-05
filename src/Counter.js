@@ -1,37 +1,30 @@
-import React, { useState } from 'react'
+import { useState } from "react";
 
-function Counter() {
-    let [count,setcount] = useState(0)
-
-function increase(){
-   setcount(count++) 
+function Counter(){
+let [count,setCount] = useState(0)
+ 
+function handleinc(){
+    setCount(1+count)
+}
+function handledec(){
+    if(count>0)
+    setCount(count-1)
+}
+function handlereset(){
+    setCount(0)
 }
 
-function decrease(){
-    
-   setcount(count--)
+
+
+
+    return(
+        <div>
+            <h1>Counter</h1>
+            <h3>{count}</h3>
+            <button onClick={handleinc}>Inc</button>
+            <button onClick={handledec}>Dec</button>
+            <button onClick={handlereset}>Reset</button>
+        </div>
+    )
 }
-function reset(){
-    
-   setcount(0)
-}
-
-  return (
-<div>
-<h1>Counter</h1>
-<h3>{count}</h3>
-<button onClick={increase}>Increase</button>
-<button onClick={decrease}>Decrease</button>
-<button onClick={reset}>Reset</button>
-<form>
-     <input type="text" placeholder='name'/>
-</form>
-
-</div>
-    
-    
-
-  )
-}
-
-export default Counter
+export default Counter;
